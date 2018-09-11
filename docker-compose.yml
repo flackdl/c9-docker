@@ -1,0 +1,18 @@
+version: '2'
+
+volumes:
+  ssh:
+  c9:
+
+services:
+
+  c9:
+    build:
+      context: .
+    # expects environment variables to exist in .env but will run without authentication if absent
+    command: ["--auth", "${C9_USER}:${C9_PASS}"]
+    ports:
+      - "8000:80"
+    volumes:
+      - ssh:/root/.ssh
+      - c9:/root/.c9
