@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 MAINTAINER Danny Flack <flackattack@gmail.com>
 
 RUN apt-get update && apt-get install -y \
-	python \
+	python python3 python3-venv \
 	build-essential \
 	wget \
 	curl \

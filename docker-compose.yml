@@ -1,9 +1,5 @@
 version: '2'
 
-volumes:
-  ssh:
-  c9:
-
 services:
 
   c9:
@@ -13,6 +9,13 @@ services:
     command: ["--auth", "${C9_USER}:${C9_PASS}"]
     ports:
       - "8000:80"
+      - "8001:8001"
     volumes:
       - ssh:/root/.ssh
       - c9:/root/.c9
+      - envs:/root/.envs
+
+volumes:
+  ssh:
+  c9:
+  envs:
