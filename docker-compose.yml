@@ -9,7 +9,10 @@ services:
     command: ["--auth", "${C9_USER}:${C9_PASS}"]
     ports:
       - "8000:80"
+      # "run" configuration ports
       - "8001:8001"
+      - "8002:8002"
+      - "8003:8003"
     volumes:
       - ssh:/root/.ssh
       - c9:/root/.c9
